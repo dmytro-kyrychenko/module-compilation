@@ -56,7 +56,7 @@ def yuma_compilation_status(compilation_result: str, yang_file_name: str) -> str
     imports_with_errors = 0
     lines = compilation_result.splitlines()
     for line in lines:
-        if 'Error' in line:
+        if 'Error:' in line:
             if 'error(332)' not in line:
                 return 'FAILED'
             else:
