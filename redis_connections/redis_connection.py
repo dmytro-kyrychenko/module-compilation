@@ -22,15 +22,15 @@ import json
 from configparser import ConfigParser
 
 from redis import Redis
+from redisConnections.redis_enum import RedisEnum
 
 from create_config import create_config
-from redis_connections.constants import RedisDatabasesEnum
 
 
 class RedisConnection:
     def __init__(
         self,
-        modules_db: int = RedisDatabasesEnum.MODULES_DB.value,
+        modules_db: int = RedisEnum.MODULES.value,
         config: ConfigParser = create_config(),
     ):
         self._redis_host = config.get('DB-Section', 'redis-host')
