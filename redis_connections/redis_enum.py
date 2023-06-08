@@ -2,7 +2,7 @@ import json
 import os.path
 from enum import IntEnum
 
-from utility.create_config import create_config
+from create_config import create_config
 
 config = create_config()
 redis_dir = config.get('Directory-Section', 'redis-dir', fallback='')
