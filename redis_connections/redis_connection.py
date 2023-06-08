@@ -22,9 +22,9 @@ import json
 from configparser import ConfigParser
 
 from redis import Redis
-from redisConnections.redis_enum import RedisEnum
 
 from create_config import create_config
+from redis_connections.redis_enum import RedisEnum
 
 
 class RedisConnection:
