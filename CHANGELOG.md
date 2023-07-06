@@ -1,5 +1,9 @@
 ## Module Compilation Release Notes
 
+* ##### v5.13.0 - 2023-07-06
+
+  * No changes - released with other [deployment submodules](https://github.com/YangCatalog/deployment)
+
 * ##### v5.12.0 - 2023-05-31
 
   * requests bumped from 2.26.0 to 2.31.0
