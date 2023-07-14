@@ -4,7 +4,7 @@ from configparser import ConfigParser
 from redis import Redis
 
 from create_config import create_config
-from redis_connections.constants import RedisDatabasesEnum
+from redis_connections.redis_enum import RedisEnum
 
 
 class RedisUserNotificationsConnection:
@@ -16,11 +16,7 @@ class RedisUserNotificationsConnection:
     def __init__(self, db: t.Optional[t.Union[int, str]] = None, config: ConfigParser = create_config()):
         self._redis_host = config.get('DB-Section', 'redis-host')
         self._redis_port = int(config.get('DB-Section', 'redis-port'))
-        db = db or config.get(
-            'DB-Section',
-            'redis-user-notifications-db',
-            fallback=RedisDatabasesEnum.USERS_NOTIFICATIONS_DB.value,
-        )
+        db = db if db is not None else RedisEnum.USERS_NOTIFICATIONS.value
         self.redis = Redis(host=self._redis_host, port=self._redis_port, db=db)
 
     def get_unsubscribed_emails(self, emails_type: str) -> list[str]:

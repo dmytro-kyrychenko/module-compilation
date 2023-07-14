@@ -31,8 +31,8 @@ import jinja2
 from pyang.statements import Statement
 
 from parsers import yang_parser
-from redis_connections.constants import RedisDatabasesEnum
 from redis_connections.redis_connection import RedisConnection
+from redis_connections.redis_enum import RedisEnum
 from utility.static_variables import IETF_RFC_MAP, NAMESPACE_MAP, ORGANIZATIONS
 from versions import validator_versions
 
@@ -214,7 +214,7 @@ def check_yangcatalog_data(
     global module_db, incomplete_db
     if not (module_db and incomplete_db):
         module_db = RedisConnection()
-        incomplete_db = RedisConnection(modules_db=RedisDatabasesEnum.INCOMPLETE_MODULES_DB.value)
+        incomplete_db = RedisConnection(modules_db=RedisEnum.TEMP_MODULES.value)
 
     yang_file_path = _path_in_dir(yang_file_pseudo_path)
     try:
