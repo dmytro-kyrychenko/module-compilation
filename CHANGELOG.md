@@ -1,5 +1,10 @@
 ## Module Compilation Release Notes
 
+* ##### v5.14.0 - 2023-08-09
+
+  * Improved readability of redis related code [#797](https://github.com/YangCatalog/backend/issues/797)
+  * scipy bumped from 1.8.1 to 1.10.0
+
 * ##### v5.13.0 - 2023-07-06
 
   * No changes - released with other [deployment submodules](https://github.com/YangCatalog/deployment)
